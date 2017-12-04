@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.adri9ps.mysqliteproyect.NuevoEstudiante"
+android:orientation="vertical"
+android:weightSum="1">
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="match_parent"
+    android:layout_height="29dp" />
+
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="NUEVO ESTUDIANTE"
+    android:textAlignment="center"
+    android:textSize="30sp" />
+
+<TextView
+    android:id="@+id/textView4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.04" />
+
+<EditText
+    android:id="@+id/editnombreE"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="NOMBRE:"
+    android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editEdadE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="EDAD:"
+        android:inputType="textPersonName" />
+
+<EditText
+    android:id="@+id/editcursoE"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="CURSO:"
+    android:inputType="textPersonName" />
+
+<EditText
+    android:id="@+id/editcicloE"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="CICLO:"
+    android:inputType="textPersonName" />
+
+<EditText
+    android:id="@+id/editmediaE"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="NOTA MEDIA:"
+    android:inputType="textPersonName" />
+
+<TextView
+    android:id="@+id/textView5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.12" />
+
+<Button
+    android:id="@+id/btnENVIAREstudiante"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.33"
+    android:text="ENVIAr" />
+
+</LinearLayout>
+
+
+
+
