@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button eliminarProfesor;
     Button filtroTotal;
     final static int SUBACT_1 = 365;
-    public Integer parametroLista;
-    public Integer parametroListaProfesores = 2;
-    Bundle parametros = new Bundle();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

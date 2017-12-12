@@ -18,11 +18,8 @@ public class FlitrosBusqueda extends AppCompatActivity {
     CheckBox estudiante, profesor;
     EditText curso, ciclo;
     Button filtro;
-    ListView lvEstudiantes_Profesores;
-    ArrayList <String> listaE_P;
     ArrayList <String> listaE_Filtros;
     ArrayList <String> listaP_Filtros;
-    final static int SUBACT_1=365;
 
     ListView lvEstudiantes,lvProfesores;
     public ArrayAdapter adapterE_Filtros;
