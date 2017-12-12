@@ -14,9 +14,11 @@ public class MainActivity extends AppCompatActivity {
     Button eliminarEstudiante;
     Button nuevoProfesor;
     Button eliminarProfesor;
-    Button listaEstudiantes;
-    Button listaProfesores;
-    final static int SUBACT_1=365;
+    Button filtroTotal;
+    final static int SUBACT_1 = 365;
+    public Integer parametroLista;
+    public Integer parametroListaProfesores = 2;
+    Bundle parametros = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +30,9 @@ public class MainActivity extends AppCompatActivity {
         nuevoProfesor = (Button) findViewById(R.id.btnAñadirProfesor);
         eliminarEstudiante = (Button) findViewById(R.id.btnEliminarEstudiante);
         eliminarProfesor = (Button) findViewById(R.id.btnEliminarProfesor);
-        listaEstudiantes = (Button) findViewById(R.id.btnListaEstudiantes);
-        listaProfesores = (Button) findViewById(R.id.btnListaProfesores);
         nuevoEstudiante = (Button) findViewById(R.id.btnAñadirEstudiante);
         nuevoProfesor = (Button) findViewById(R.id.btnAñadirProfesor);
+        filtroTotal = (Button) findViewById(R.id.btnFiltrar);
 
         nuevoEstudiante.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,22 +62,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i, SUBACT_1);
             }
         });
-        listaEstudiantes.setOnClickListener(new View.OnClickListener() {
+        filtroTotal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ListarEstudiantes.class);
+                Intent i = new Intent(getApplicationContext(), FlitrosBusqueda.class);
                 startActivityForResult(i, SUBACT_1);
-            }
-        });
-        listaProfesores.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ListarProfesores.class);
-                startActivityForResult(i, SUBACT_1);
+
             }
         });
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

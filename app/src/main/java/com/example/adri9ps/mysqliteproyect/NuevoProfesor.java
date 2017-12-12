@@ -18,7 +18,7 @@ public class NuevoProfesor extends AppCompatActivity {
 
         //Asignamos
         Enombre_p = (EditText) findViewById(R.id.editnombreP);
-        Eedad_p = (EditText) findViewById(R.id.editapellidoP);
+        Eedad_p = (EditText) findViewById(R.id.editEdadP);
         Ecurso_p = (EditText) findViewById(R.id.editcursoP);
         Eciclo_p = (EditText) findViewById(R.id.editcicloP);
         Edespacho_p = (EditText) findViewById(R.id.editmediaP);

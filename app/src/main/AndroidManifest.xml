@@ -18,11 +18,10 @@
         </activity>
         <activity android:name=".NuevoEstudiante" />
         <activity android:name=".DB" />
-        <activity android:name=".ListarEstudiantes" />
         <activity android:name=".NuevoProfesor" />
-        <activity android:name=".ListarProfesores" />
         <activity android:name=".EliminarEstudiante" />
-        <activity android:name=".EliminarProfesor"></activity>
+        <activity android:name=".EliminarProfesor" />
+        <activity android:name=".FlitrosBusqueda"></activity>
     </application>
 
 </manifest>

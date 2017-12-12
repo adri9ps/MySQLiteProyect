@@ -126,6 +126,61 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
+    public ArrayList llenar_lvEstudiantes_Y_Profesores() {
+        ArrayList<String> lista = new ArrayList<>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        String q = "SELECT * FROM profesores";
+        String s = "SELECT * FROM estudiantes";
+        Cursor registrosE = database.rawQuery(s, null);
+        Cursor registrosP = database.rawQuery(q, null);
+        if (registrosE.moveToFirst()) {
+            do {
+                lista.add(registrosE.getString(1));
+                lista.add(registrosE.getString(2));
+
+            } while (registrosE.moveToNext());
+        }
+        if (registrosP.moveToFirst()) {
+            do {
+                lista.add(registrosP.getString(1));
+            } while (registrosP.moveToNext());
+        }
+        return lista;
+
+    }
+
+    public ArrayList filtroEstudiantes(String filtros){
+        ArrayList<String> todosEstudiantes = new ArrayList<String>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        String q = "SELECT * FROM estudiantes "  + filtros + ";";
+        Cursor registrosFiltrosE = database.rawQuery(q, null);
+
+        if (registrosFiltrosE.moveToFirst()) {
+            do {
+               todosEstudiantes.add(registrosFiltrosE.getString(1));
+            } while (registrosFiltrosE.moveToNext());
+        }
+
+        return todosEstudiantes;
+    }
+
+
+
+    public ArrayList filtroProfesores(String filtros){
+        ArrayList<String> todosProfesores = new ArrayList<String>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        String q = "SELECT * FROM profesores "  + filtros + ";";
+        Cursor registrosFiltrosP = database.rawQuery(q, null);
+
+        if (registrosFiltrosP.moveToFirst()) {
+            do {
+                todosProfesores.add(registrosFiltrosP.getString(1));
+            } while (registrosFiltrosP.moveToNext());
+        }
+
+        return todosProfesores;
+    }
+
 }
 
 

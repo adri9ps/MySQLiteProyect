@@ -1,53 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="com.example.adri9ps.mysqliteproyect.MainActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    android:orientation="vertical"
+    tools:context="com.example.adri9ps.mysqliteproyect.MainActivity">
     android:orientation="vertical">
-android:orientation="vertical">
 
-<Button
-    android:id="@+id/btnAñadirEstudiante"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="añadir estudiante" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-<Button
-    android:id="@+id/btnEliminarEstudiante"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="Eliminar Estudiante" />
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.91"
+        android:fontFamily="monospace"
+        android:text="BASE DE DATOS COLEGIO"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-<Button
-    android:id="@+id/btnAñadirProfesor"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="Añadir profesor" />
+    <Button
+        android:id="@+id/btnAñadirEstudiante"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="añadir estudiante"
+        android:textAllCaps="true" />
 
-<Button
-    android:id="@+id/btnEliminarProfesor"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="eliminar profesor" />
+    <Button
+        android:id="@+id/btnEliminarEstudiante"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Eliminar Estudiante"
+        android:textAllCaps="true" />
 
-<Button
-    android:id="@+id/btnListaEstudiantes"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="listar estudiantes" />
+    <Button
+        android:id="@+id/btnAñadirProfesor"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Añadir profesor"
+        android:textAllCaps="true" />
 
-<Button
-    android:id="@+id/btnListaProfesores"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="listar profesores" />
+    <Button
+        android:id="@+id/btnEliminarProfesor"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="eliminar profesor"
+        android:textAllCaps="true" />
+
+    <Button
+        android:id="@+id/btnFiltrar"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="filtrar búsquedas"
+        android:textAllCaps="true" />
 </LinearLayout>
 
