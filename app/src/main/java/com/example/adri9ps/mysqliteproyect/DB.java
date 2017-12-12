@@ -176,6 +176,7 @@ public class DB extends SQLiteOpenHelper {
             do {
                 todosProfesores.add(registrosFiltrosP.getString(1));
             } while (registrosFiltrosP.moveToNext());
+            
         }
 
         return todosProfesores;
