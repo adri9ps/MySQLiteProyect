@@ -201,20 +201,7 @@ public class DB extends SQLiteOpenHelper {
         return todosProfesores;
     }
 
-    public ArrayList filtroAsignaturas(String filtros){
-        ArrayList<String> todasAsignaturas = new ArrayList<String>();
-        SQLiteDatabase database = this.getWritableDatabase();
-        String q = "SELECT * FROM asignaturas "  + filtros + ";";
-        Cursor registrosFiltrosE = database.rawQuery(q, null);
 
-        if (registrosFiltrosE.moveToFirst()) {
-            do {
-                todasAsignaturas.add(registrosFiltrosE.getString(1));
-            } while (registrosFiltrosE.moveToNext());
-        }
-
-        return todasAsignaturas;
-    }
 
 }
 
