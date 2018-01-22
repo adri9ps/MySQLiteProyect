@@ -16,11 +16,13 @@ import java.util.ArrayList;
 
 public class DB extends SQLiteOpenHelper {
     public DB(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        //Creo la bbdd con nombre instituto
         super(context, "Instituto", factory, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //creo tablas estudiantes y profesores con sus respectivos atributos
         db.execSQL("create table estudiantes(id integer primary key autoincrement, nombre_e text, edad_e text, curso_e text, ciclo_e text, nota_media_e text)");
         db.execSQL("create table profesores(id integer primary key autoincrement, nombre_p text, edad_p text, curso_p text, ciclo_p text, despacho_p text)");
 
@@ -32,8 +34,11 @@ public class DB extends SQLiteOpenHelper {
     }
 
     public String guardarEstudiantes(String nombre,String edad, String curso, String ciclo, String nota_media) {
+        //Este método guarda todos los atributos de un estudiante que desde la clase NuevoEstudiante
+        //llamaremos, pasándole los datos introducidos por el usuario
         String mensaje = "";
         SQLiteDatabase database = this.getWritableDatabase();
+        //Content values donde se guarda la información
         ContentValues newValues = new ContentValues();
         newValues.put("nombre_e", nombre);
         newValues.put("edad_e", edad);

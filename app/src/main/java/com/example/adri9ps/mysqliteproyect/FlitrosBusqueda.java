@@ -43,6 +43,7 @@ public class FlitrosBusqueda extends AppCompatActivity {
         filtro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 recargarVista();
             }
         });
