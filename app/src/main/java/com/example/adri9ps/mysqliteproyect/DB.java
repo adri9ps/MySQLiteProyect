@@ -126,28 +126,7 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList llenar_lvEstudiantes_Y_Profesores() {
-        ArrayList<String> lista = new ArrayList<>();
-        SQLiteDatabase database = this.getWritableDatabase();
-        String q = "SELECT * FROM profesores";
-        String s = "SELECT * FROM estudiantes";
-        Cursor registrosE = database.rawQuery(s, null);
-        Cursor registrosP = database.rawQuery(q, null);
-        if (registrosE.moveToFirst()) {
-            do {
-                lista.add(registrosE.getString(1));
-                lista.add(registrosE.getString(2));
 
-            } while (registrosE.moveToNext());
-        }
-        if (registrosP.moveToFirst()) {
-            do {
-                lista.add(registrosP.getString(1));
-            } while (registrosP.moveToNext());
-        }
-        return lista;
-
-    }
 
     public ArrayList filtroEstudiantes(String filtros){
         ArrayList<String> todosEstudiantes = new ArrayList<String>();
