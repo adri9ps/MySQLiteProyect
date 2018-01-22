@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class DB extends SQLiteOpenHelper {
     public DB(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         //Creo la bbdd con nombre instituto
-        super(context, "Instituto", factory, 1);
+        super(context, "Instituto_Examen", factory, 1);
     }
 
     @Override
@@ -25,6 +25,8 @@ public class DB extends SQLiteOpenHelper {
         //creo tablas estudiantes y profesores con sus respectivos atributos
         db.execSQL("create table estudiantes(id integer primary key autoincrement, nombre_e text, edad_e text, curso_e text, ciclo_e text, nota_media_e text)");
         db.execSQL("create table profesores(id integer primary key autoincrement, nombre_p text, edad_p text, curso_p text, ciclo_p text, despacho_p text)");
+        //Nueva tabla asiganturas
+        db.execSQL("create table asignaturas(id integer primary key autoincrement, nombre_a text, horas_a)");
 
     }
 
@@ -69,6 +71,25 @@ public class DB extends SQLiteOpenHelper {
             mensaje = "Profesor ingresado correctamente";
         } catch (SQLException e) {
             mensaje = "No se ha podido ingresar el profesor";
+        }
+        database.close();
+        return mensaje;
+    }
+
+    public String guardarAsignaturas(String nombre,String horas) {
+        //Este método guarda todos los atributos de una asignatura que desde la clase NuevaAsignatura
+        //llamaremos, pasándole los datos introducidos por el usuario
+        String mensaje = "";
+        SQLiteDatabase database = this.getWritableDatabase();
+        //Content values donde se guarda la información
+        ContentValues newValues = new ContentValues();
+        newValues.put("nombre_a", nombre);
+        newValues.put("horas_a", horas);
+        try {
+            database.insertOrThrow("asignaturas", null, newValues);
+            mensaje = "Asignatura ingresada correctamente";
+        } catch (SQLException e) {
+            mensaje = "No se ha podido ingresar la asignatura";
         }
         database.close();
         return mensaje;
@@ -131,6 +152,20 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
+    public ArrayList llenar_lvAsignaturas() {
+        ArrayList<String> lista = new ArrayList<>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        String q = "SELECT * FROM asignaturas";
+        Cursor registros = database.rawQuery(q, null);
+        if (registros.moveToFirst()) {
+            do {
+                lista.add(registros.getString(1));
+            } while (registros.moveToNext());
+        }
+        return lista;
+
+    }
+
 
 
     public ArrayList filtroEstudiantes(String filtros){
@@ -164,6 +199,21 @@ public class DB extends SQLiteOpenHelper {
         }
 
         return todosProfesores;
+    }
+
+    public ArrayList filtroAsignaturas(String filtros){
+        ArrayList<String> todasAsignaturas = new ArrayList<String>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        String q = "SELECT * FROM asignaturas "  + filtros + ";";
+        Cursor registrosFiltrosE = database.rawQuery(q, null);
+
+        if (registrosFiltrosE.moveToFirst()) {
+            do {
+                todasAsignaturas.add(registrosFiltrosE.getString(1));
+            } while (registrosFiltrosE.moveToNext());
+        }
+
+        return todasAsignaturas;
     }
 
 }

@@ -21,7 +21,9 @@
         <activity android:name=".NuevoProfesor" />
         <activity android:name=".EliminarEstudiante" />
         <activity android:name=".EliminarProfesor" />
-        <activity android:name=".FlitrosBusqueda"></activity>
+        <activity android:name=".FlitrosBusqueda" />
+        <activity android:name=".NuevaAsignatura" />
+        <activity android:name=".TodasAsignaturas"></activity>
     </application>
 
 </manifest>

@@ -70,5 +70,23 @@
         android:layout_weight="1"
         android:text="filtrar búsquedas"
         android:textAllCaps="true" />
+
+    <Button
+        android:id="@+id/btnNuevaAsig"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nueva asignatura"
+        android:textAllCaps="true" />
+
+    <Button
+        android:id="@+id/btnTodasLasAsignaturas"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="todas las asignaturas"
+        android:textAllCaps="true" />
 </LinearLayout>
 
